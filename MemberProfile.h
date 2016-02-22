@@ -81,6 +81,7 @@ class MemberProfile: public User
             Ranking rank;
             bool notification;
             Facilities bookedFacility[10];
+            int noOfBookings;
             //Date bookedDates[10];
         } memProfile[MAX];
 };

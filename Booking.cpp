@@ -150,7 +150,7 @@ int Booking::newBooking(string fac_name, int month, int day, string username, in
                 int index1 = getLastIndexBookedFacilites(username);
                 //int index2 = mp.getLastIndexDate(username);
                 //int index3 = mp.getLastIndexTimeslot (username);
-                
+                /*
                 memProfile[location].bookedFacility[index1+1].name = fac_name;
                 memProfile[location].bookedFacility[index1+1].description = bookingdates[i].facility.description;
                 memProfile[location].bookedFacility[index1+1].rates = bookingdates[i].facility.rates;
@@ -158,7 +158,12 @@ int Booking::newBooking(string fac_name, int month, int day, string username, in
                 memProfile[location].bookedFacility[index1+1].timeslot[month-1][day-1][timeslot-1] = 1;
                 //mp.memProfile[location].bookedDates[index2+1].day = day;
                 //mp.memProfile[location].bookedDates[index2+1].month = month;
-                
+                */
+                memProfile[location].bookedFacility[memProfile[location].noOfBookings].name = fac_name;
+                memProfile[location].bookedFacility[memProfile[location].noOfBookings].description = bookingdates[i].facility.description;
+                memProfile[location].bookedFacility[memProfile[location].noOfBookings].rates = bookingdates[i].facility.rates;
+                memProfile[location].bookedFacility[memProfile[location].noOfBookings].timeslot[month-1][day-1][timeslot-1] = 1;
+                memProfile[location].noOfBookings++;
                 for (int j=0; j < s; j++)
                 {
                     outfile << bookingdates[j].facility.name << ","; 
